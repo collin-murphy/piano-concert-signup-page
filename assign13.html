@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <h1>Piano Registration</h1>
+    <form id="signup" class="flexbox" action="../assign13.php" method="post">
+        <div class="container">
+            <label for="performance">Performance type:</label><br>
+            <select id="performance" name="performance" onchange="displayDuet()">
+                <option>Select one</option>
+                <option>Solo</option>
+                <option>Duet</option>
+                <option>Concerto</option>
+            </select><br><br>
+
+            <label for="first_name">First Name</label><br>
+            <input type="text" id="first_name" name="first_name" required><br><br>
+
+            <label for="last_name">Last Name</label><br>
+            <input type="text" id="last_name" name="last_name" required><br><br>
+
+            <div id="duet" style="display:none">
+                <label for="first_name_2">Duet Partner's First Name</label><br>
+                <input type="text" id="first_name_2" name="first_name_2"><br><br>
+
+                <label for="last_name_2">Duet Partner's Last Name</label><br>
+                <input type="text" id="last_name_2" name="last_name_2"><br><br>
+            </div>
+
+            <label for="skill">Skill level</label><br>
+            <select id="skill" name="skill">
+                <option>Select one</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Pre-advanced</option>
+                <option>Advanced</option>
+            </select><br><br>
+            <input type="button" id="clear" value="Reset" onclick="resetForms();"><br>
+        </div>
+        <div class="container">
+            <label for="instrument">Instrument</label><br>
+            <input type="text" id="instrument" name="instrument" required><br><br>
+
+            <label for="building">Building</label><br>
+            <input type="text" id="building" name="building" required><br><br>
+
+            <label for="room">Room #</label><br>
+            <input type="text" id="room" name="room" required><br><br>
+
+            <label for="time_slot">Time slot</label><br>
+            <input type="text" id="time_slot" name="time_slot" required><br><br>
+
+
+            <div id="error"></div>
+
+            <input type="button" value="Register" onclick="register();"><br>
+        </div>
+
+        <div class="container" id="results">
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>
